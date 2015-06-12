@@ -1,0 +1,59 @@
+<div ng-app="demoApp">
+
+    <div class="container" ng-controller="HomeCtrl">
+
+        <h1>{{ demoTitle }}</h1>
+
+        <p>Easily build JSON objects that can be used for filtering data
+            in complex systems. A typical example is an order tracker.</p>
+
+        <p>Clicking on the highlighted fields displays all possible options
+            that can be applied to the filter.</p>
+
+        <pre>{{ searchFilter }}</pre>
+
+        <p>Show orders placed by
+
+            <checklist
+                menu="userList"
+                data="searchFilter.users"
+                source="users"
+                sourcekey="id"
+                sourcevalue="name"
+                model="user"
+                id="userList"
+                ></checklist>
+
+            who
+            <select data-ng-options="operator.value as operator.label for operator in sale_operators"
+                    data-ng-model="searchFilter.sale_operator"></select>
+
+            <checklist
+                menu="productList"
+                data="searchFilter.products"
+                source="products"
+                sourcekey="id"
+                sourcevalue="name"
+                model="product"
+                id="productList"
+                ></checklist>
+
+            wish a status of
+
+            <checklist
+                menu="statusList"
+                data="searchFilter.status"
+                source="statuses"
+                sourcekey="id"
+                sourcevalue="name"
+                model="statuses"
+                id="statusList"
+                ></checklist>
+
+            <button class="btn btn-primary">Filter</button>
+
+        </p>
+
+    </div>
+
+</div>
