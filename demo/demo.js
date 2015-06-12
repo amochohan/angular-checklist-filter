@@ -29,7 +29,7 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 
     return {
         restrict: "E",
-        templateUrl: 'https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/src/templates/checklistTpl.html',
+        templateUrl: '<span class="toggleChecklist" ng-click="toggleChecklist()">{{ data | checklist: source:sourcekey:sourcevalue:model }}<span class="checklist" ng-show="menu"><label class="form-control"><input type="checkbox" name="selected{{model}}[]" value="" ng-checked="data.length == 0" ng-click="clearFilter(model)"> any</label><label ng-repeat="item in source" class="form-control"> <input type="checkbox" name="selected{{model}}[]" value="{{ item[sourcekey] }}" ng-checked="data.indexOf(item[sourcekey] ) > -1" ng-click="toggleUser(item[sourcekey])"> {{ item[sourcevalue] }} </label> </span></span>',
         scope: {
             id : "@name",
             menu : "@shows",
