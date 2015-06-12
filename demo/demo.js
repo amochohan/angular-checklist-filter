@@ -65,20 +65,48 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 demoApp.factory('Orders', function($http) {
     return {
         loadAllOrderStatuses: function() {
-            //return the promise directly.
-            return $http.get('https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/example/data/order_status.json')
-                .then(function(result) {
-                    //resolve the promise as the data
-                    return result.data;
-                });
+            return [
+                {
+                    "id":1,
+                    "name":"Draft"
+                },
+                {
+                    "id":2,
+                    "name":"Paid"
+                },
+                {
+                    "id":3,
+                    "name":"Cancelled"
+                },
+                {
+                    "id":4,
+                    "name":"Returned"
+                },
+                {
+                    "id":5,
+                    "name":"Awaiting payment"
+                }
+            ];
         },
         loadAllPurchaseFilterOperators: function() {
-            //return the promise directly.
-            return $http.get('https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/example/data/sale_operators.json')
-                .then(function(result) {
-                    //resolve the promise as the data
-                    return result.data;
-                });
+            return [
+                {
+                    "label": "purchased",
+                    "value": "="
+                },
+                {
+                    "label": "didn't purchase",
+                    "value": "!="
+                },
+                {
+                    "label": "purchased one of",
+                    "value": "1="
+                },
+                {
+                    "label": "didn't purchase any of",
+                    "value": "!1="
+                }
+            ];
         }
     }
 });
@@ -86,12 +114,43 @@ demoApp.factory('Orders', function($http) {
 demoApp.factory('Products', function($http) {
     return {
         loadAll: function() {
-            //return the promise directly.
-            return $http.get('https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/example/data/products.json')
-                .then(function(result) {
-                    //resolve the promise as the data
-                    return result.data;
-                });
+            return [
+                {
+                    "id": 1,
+                    "code": "ts01",
+                    "name": "Blue T-Shirt"
+                },
+                {
+                    "id": 2,
+                    "code": "ts02",
+                    "name": "Green T-Shirt"
+                },
+                {
+                    "id": 3,
+                    "code": "ts03",
+                    "name": "Striped T-Shirt"
+                },
+                {
+                    "id": 4,
+                    "code": "jk01",
+                    "name": "Retro Leather Jacket"
+                },
+                {
+                    "id": 5,
+                    "code": "jk02",
+                    "name": "Denim Jacket"
+                },
+                {
+                    "id": 6,
+                    "code": "tb01",
+                    "name": "Smart Black Trousers"
+                },
+                {
+                    "id": 7,
+                    "code": "tb02",
+                    "name": "Smart Grey Trousers"
+                }
+            ]
         }
     }
 });
@@ -100,11 +159,30 @@ demoApp.factory('Users', function($http) {
     return {
         loadAll: function() {
             //return the promise directly.
-            return $http.get('https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/example/data/users.json')
-                .then(function(result) {
-                    //resolve the promise as the data
-                    return result.data;
-                });
+            return {
+                "id":1,
+                "name":"Amo"
+            },
+            {
+                "id":2,
+                "name":"Ben"
+            },
+            {
+                "id":3,
+                "name":"Joe"
+            },
+            {
+                "id":4,
+                "name":"Fred"
+            },
+            {
+                "id":5,
+                "name":"Mari"
+            },
+            {
+                "id":6,
+                "name":"Ben"
+            }
         }
     }
 });
