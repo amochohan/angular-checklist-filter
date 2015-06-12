@@ -159,30 +159,32 @@ demoApp.factory('Users', function($http) {
     return {
         loadAll: function() {
             //return the promise directly.
-            return {
-                "id":1,
-                "name":"Amo"
-            },
-            {
-                "id":2,
-                "name":"Ben"
-            },
-            {
-                "id":3,
-                "name":"Joe"
-            },
-            {
-                "id":4,
-                "name":"Fred"
-            },
-            {
-                "id":5,
-                "name":"Mari"
-            },
-            {
-                "id":6,
-                "name":"Ben"
-            }
+            return [
+                {
+                    "id":1,
+                    "name":"Amo"
+                },
+                {
+                    "id":2,
+                    "name":"Ben"
+                },
+                {
+                    "id":3,
+                    "name":"Joe"
+                },
+                {
+                    "id":4,
+                    "name":"Fred"
+                },
+                {
+                    "id":5,
+                    "name":"Mari"
+                },
+                {
+                    "id":6,
+                    "name":"Ben"
+                }
+            ];
         }
     }
 });
