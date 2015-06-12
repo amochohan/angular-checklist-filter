@@ -100,6 +100,67 @@ demoApp.controller('HomeCtrl', function ($scope) {
         }
     ];
 
+    $scope.products = [
+        {
+            "id": 1,
+            "code": "ts01",
+            "name": "Blue T-Shirt"
+        },
+        {
+            "id": 2,
+            "code": "ts02",
+            "name": "Green T-Shirt"
+        },
+        {
+            "id": 3,
+            "code": "ts03",
+            "name": "Striped T-Shirt"
+        },
+        {
+            "id": 4,
+            "code": "jk01",
+            "name": "Retro Leather Jacket"
+        },
+        {
+            "id": 5,
+            "code": "jk02",
+            "name": "Denim Jacket"
+        },
+        {
+            "id": 6,
+            "code": "tb01",
+            "name": "Smart Black Trousers"
+        },
+        {
+            "id": 7,
+            "code": "tb02",
+            "name": "Smart Grey Trousers"
+        }
+    ];
+
+    $scope.statuses = [
+        {
+            "id":1,
+            "name":"Draft"
+        },
+        {
+            "id":2,
+            "name":"Paid"
+        },
+        {
+            "id":3,
+            "name":"Cancelled"
+        },
+        {
+            "id":4,
+            "name":"Returned"
+        },
+        {
+            "id":5,
+            "name":"Awaiting payment"
+        }
+    ];
+
 
 
 });
