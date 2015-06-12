@@ -92,3 +92,8 @@ The value of the object that will be displayed as a label. In the example of use
 
 The type of object being filtered. In the current example, we're building a list of users, so ```user``` 
 is appropriate. This value is used when no options have been selected to output ```any model``` (```any user```).
+
+## Licence
+
+This package is open-sourced software licensed under the MIT license. For support or improvements, please submit 
+a pull request or log an issue. Amo Chohan <amo.chohan@gmail.com>
