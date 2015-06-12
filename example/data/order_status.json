@@ -1,0 +1,22 @@
+[
+  {
+    "id":1,
+    "name":"Draft"
+  },
+  {
+    "id":2,
+    "name":"Paid"
+  },
+  {
+    "id":3,
+    "name":"Cancelled"
+  },
+  {
+    "id":4,
+    "name":"Returned"
+  },
+  {
+    "id":5,
+    "name":"Awaiting payment"
+  }
+]

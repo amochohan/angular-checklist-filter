@@ -1,0 +1,18 @@
+[
+  {
+    "label": "purchased",
+    "value": "="
+  },
+  {
+    "label": "didn't purchase",
+    "value": "!="
+  },
+  {
+    "label": "purchased one of",
+    "value": "1="
+  },
+  {
+    "label": "didn't purchase any of",
+    "value": "!1="
+  }
+]
