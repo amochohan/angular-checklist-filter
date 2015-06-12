@@ -55,7 +55,7 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
                 $scope.data = [];
             }
 
-            $scope.toggleUser = function toggleUser(id) {
+            $scope.toggleList = function toggleList(id) {
                 var idx = $scope.data.indexOf(id);
                 if (idx > -1) {
                     $scope.data.splice(idx, 1);
