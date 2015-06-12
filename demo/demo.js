@@ -63,7 +63,7 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 });
 
 
-demoApp.controller('HomeCtrl', function ($scope, Users) {
+demoApp.controller('HomeCtrl', function ($scope) {
 
     $scope.demoTitle = 'Angular Checklist Filter';
 
