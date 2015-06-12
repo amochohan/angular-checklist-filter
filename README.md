@@ -4,6 +4,11 @@ Clickable filters will display a dropdown containing a list of checkboxes that c
 
 ![The checklist filter menu](https://raw.githubusercontent.com/drawmyattention/angular-checklist-filter/master/screenshot.png "The checklist filter menu")
 
+## Online demo
+
+A basic example which shows how this directive could be used is available via [JSFiddle](http://jsfiddle.net/gh/get/angular/1.1/drawmyattention/angular-checklist-filter/tree/master/demo/). Note: the code 
+for the demo is far from optimal because of the limitations of JSFiddle. For a proper demonstration which has production quality code, see the ```example``` directory.
+
 ## Installation
 
 Include Angular and the Checklist-filter (checklist-filter.js) in your application.
