@@ -63,41 +63,6 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 });
 
 
-
-demoApp.factory('Users', function() {
-    return {
-        loadAll: function() {
-            //return the promise directly.
-            return [
-                {
-                    "id":1,
-                    "name":"Amo"
-                },
-                {
-                    "id":2,
-                    "name":"Ben"
-                },
-                {
-                    "id":3,
-                    "name":"Joe"
-                },
-                {
-                    "id":4,
-                    "name":"Fred"
-                },
-                {
-                    "id":5,
-                    "name":"Mari"
-                },
-                {
-                    "id":6,
-                    "name":"Ben"
-                }
-            ];
-        }
-    }
-});
-
 demoApp.controller('HomeCtrl', function ($scope, Users) {
 
     $scope.demoTitle = 'Angular Checklist Filter';
@@ -108,9 +73,33 @@ demoApp.controller('HomeCtrl', function ($scope, Users) {
         status: []
     };
 
-    Users.loadAll().then(function(users) {
-        $scope.users = users;
-    });
+    $scope.users = [
+        {
+            "id":1,
+            "name":"Amo"
+        },
+        {
+            "id":2,
+            "name":"Ben"
+        },
+        {
+            "id":3,
+            "name":"Joe"
+        },
+        {
+            "id":4,
+            "name":"Fred"
+        },
+        {
+            "id":5,
+            "name":"Mari"
+        },
+        {
+            "id":6,
+            "name":"Ben"
+        }
+    ];
+
 
 
 });
