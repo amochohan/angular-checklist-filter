@@ -40,6 +40,9 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 
         if(output.length==0)
         {
+            if(typeof noselection == "undefined") {
+                noselection = 'any';
+            }
             return noselection + ' ' + default_no_results;
         }
 
