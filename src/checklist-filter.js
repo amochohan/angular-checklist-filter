@@ -15,7 +15,6 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
         {
             if(data.constructor === Array)
             {
-                console.log('true');
                 for (i = 0; i < data.length; i++)
                 {
                     for(l=0; l<lookup_array.length; l++)
@@ -46,7 +45,7 @@ angular.module('drawmyattention.filters', []).filter('checklist', function() {
 
         return output.substring(0, output.length - 2);
     }
-}).directive('checklist', function(States) {
+}).directive('checklist', function() {
 
     return {
         restrict: "E",
