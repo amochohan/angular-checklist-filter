@@ -1,6 +1,6 @@
 demoApp.controller('HomeCtrl', function ($scope, Users, Products, Orders) {
 
-    $scope.demoTitle = 'Angular Checklist Filter';
+    $scope.title = 'Filter orders';
 
     $scope.searchFilter = {
         users: [1,2],

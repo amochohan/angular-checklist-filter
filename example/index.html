@@ -12,18 +12,21 @@
     <script type="application/javascript" src="../src/checklist-filter.js"></script>
     <script type="application/javascript" src="../example/js/app.js"></script>
     <script type="application/javascript" src="../example/js/controllers/HomeCtrl.js"></script>
+    <script type="application/javascript" src="../example/js/controllers/UserSearchCtrl.js"></script>
     <script type="application/javascript" src="../example/js/services/Users.js"></script>
     <script type="application/javascript" src="../example/js/services/Orders.js"></script>
     <script type="application/javascript" src="../example/js/services/Products.js"></script>
+    <script type="application/javascript" src="../example/js/services/Countries.js"></script>
+    <script type="application/javascript" src="../example/js/services/States.js"></script>
 
     <link rel="stylesheet" href="../src/css/checklist-filter.css">
 
 </head>
-<body ng-controller="HomeCtrl">
+<body>
 
 <div class="container">
 
-    <h1>{{ demoTitle }}</h1>
+    <h1>Angular Checklist Filter</h1>
 
     <p>Easily build JSON objects that can be used for filtering data
         in complex systems. A typical example is an order tracker.</p>
@@ -31,52 +34,166 @@
     <p>Clicking on the highlighted fields displays all possible options
         that can be applied to the filter.</p>
 
-    <pre>{{ searchFilter }}</pre>
+    <div ng-controller="HomeCtrl">
 
-    <p>Show orders placed by
+        <h2>{{ title }}</h2>
 
-    <checklist
-        menu="userList"
-        data="searchFilter.users"
-        source="users"
-        sourcekey="id"
-        sourcevalue="name"
-        model="user"
-        id="userList"
-        ></checklist>
+        <pre>{{ searchFilter }}</pre>
 
-        who
-        <select data-ng-options="operator.value as operator.label for operator in sale_operators"
-                data-ng-model="searchFilter.sale_operator"></select>
+        <p>Show orders placed by
 
-    <checklist
-        menu="productList"
-        data="searchFilter.products"
-        source="products"
-        sourcekey="id"
-        sourcevalue="name"
-        model="product"
-        id="productList"
-        ></checklist>
+            <checklist
+                noselection="any"
+                menu="userList"
+                data="searchFilter.users"
+                source="users"
+                sourcekey="id"
+                sourcevalue="name"
+                model="user"
+                id="userList"
+                ></checklist>
 
-        wish a status of
+            who
+            <select data-ng-options="operator.value as operator.label for operator in sale_operators"
+                    data-ng-model="searchFilter.sale_operator"></select>
 
-    <checklist
-        menu="statusList"
-        data="searchFilter.status"
-        source="statuses"
-        sourcekey="id"
-        sourcevalue="name"
-        model="statuses"
-        id="statusList"
-        ></checklist>
+            <checklist
+                noselection="any"
+                menu="productList"
+                data="searchFilter.products"
+                source="products"
+                sourcekey="id"
+                sourcevalue="name"
+                model="product"
+                id="productList"
+                ></checklist>
 
-        <button class="btn btn-primary" ng-click="getFilteredCommission()">Filter</button>
+            wish a status of
 
-    </p>
+            <checklist
+                noselection="any"
+                menu="statusList"
+                data="searchFilter.status"
+                source="statuses"
+                sourcekey="id"
+                sourcevalue="name"
+                model="statuses"
+                id="statusList"
+                ></checklist>
+
+            <button class="btn btn-primary" ng-click="getFilteredCommission()">Filter</button>
+
+        </p>
+
+    </div>
+
+    <div ng-controller="UserSearchCtrl">
+
+        <h2>{{ title }}</h2>
+
+        <pre>Filter: {{ searchFilter }}</pre>
 
 
+        <p>
 
+            Show users in
+
+            <checklist
+                noselection="any"
+                menu="countryList"
+                data="searchFilter.country"
+                source="countries"
+                sourcekey="code"
+                sourcevalue="name"
+                model="countries"
+                loadmodelonchange="states"
+                id="countryList"></checklist>
+
+            <checklist
+                noselection="any"
+                menu="stateList"
+                data="searchFilter.state"
+                source="states"
+                sourcekey="code"
+                sourcevalue="name"
+                model="state"
+                requiresdata="searchFilter.country"
+                requiresmodel="country"
+                id="stateList"></checklist>
+
+            <checklist
+                noselection="any"
+                menu="cityList"
+                data="searchFilter.city"
+                source="cities"
+                sourcekey="name"
+                sourcevalue="name"
+                model="city"
+                requiresdata="searchFilter.state"
+                requiresmodel="state"
+                id="cityList"></checklist>
+
+            with
+
+            <checklist
+                noselection="any"
+                menu="licenceStatusList"
+                data="searchFilter.licence_statuses"
+                source="licence_statuses"
+                sourcekey="value"
+                sourcevalue="label"
+                model="status"
+                id="licenceStatusList"></checklist>
+
+            <checklist
+                noselection="any"
+                menu="licenceTypeList"
+                data="searchFilter.licence_types"
+                source="licence_types"
+                sourcekey="value"
+                sourcevalue="label"
+                model="type"
+                id="licenceTypeList"></checklist>
+
+            licences to
+
+            <select data-ng-options="modifier.value as modifier.label for modifier in product_modifiers"
+                    data-ng-model="searchFilter.product_modifier"></select>
+
+            <checklist
+                noselection="any"
+                menu="serviceList"
+                data="searchFilter.products"
+                source="products"
+                sourcekey="cat_id"
+                sourcevalue="cat_name"
+                model="service"
+                id="serviceList"></checklist>
+
+            licenced
+
+            <select data-ng-options="modifier.value as modifier.label for modifier in date_modifiers"
+                    data-ng-model="searchFilter.date_modifier"></select>
+
+            <input size="10" placeholder="" ng-model="searchFilter.licence_date" />
+
+            managed by
+
+            <checklist
+                noselection="any"
+                menu="managerList"
+                data="searchFilter.managers"
+                source="managers"
+                sourcekey="id"
+                sourcevalue="name"
+                model="manager"
+                id="managerList"></checklist>
+
+            <button class="btn btn-primary">Filter</button>
+
+        </p>
+
+    </div>
 
 </div>
 

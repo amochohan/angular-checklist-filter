@@ -1,7 +1,11 @@
-<span class="toggleChecklist">
+<span class="toggleChecklist" ng-if="!hasRequiredDependency() && verbose=='true'">Select a {{ requiresmodel }}</span>
+
+<span class="toggleChecklist" ng-if="hasRequiredDependency()">
+
     <span ng-click="toggleChecklist()">
-            {{ data | checklist: source:sourcekey:sourcevalue:model }}
+            {{ data | checklist: source:sourcekey:sourcevalue:model:noselection }}
     </span>
+
     <span class="checklist" ng-show="menu">
         <label class="form-control">
             <input
@@ -9,7 +13,7 @@
                 name="selected{{model}}[]"
                 value=""
                 ng-checked="data.length == 0"
-                ng-click="clearFilter(model)"> any
+                ng-click="clearFilter(model)"> {{ noselection }} {{ model }}
         </label>
         <input class="form-control" name="filter" placeholder="Filter {{ model }}" ng-model="filter" />
        <label ng-repeat="item in source | filter : filter" class="form-control">
@@ -21,4 +25,5 @@
                ng-click="toggleList(item[sourcekey])"> {{ item[sourcevalue] }}
        </label>
     </span>
+
 </span>
